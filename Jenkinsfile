@@ -11,7 +11,7 @@ node {
     }
 
     stage('PUSH_STAGE') {
-        docker.withRegistry('https://registry.hub.dockr.com','docker-hub') {
+        docker.withRegistry('https://registry.hub.docker.com','docker-hub') {
             frontend.push()
             backend.push()
         }
