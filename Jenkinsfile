@@ -1,20 +1,7 @@
-pipeline {
-    agent any 
-    stages {
-        stage('BUILD_STAGE') { 
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('PUSH_STAGE') { 
-            steps {
-            	echo 'Pushing..'    
-            }
-        }
-        stage('DEPLOY') { 
-            steps {
-                echo 'Deploying..'
-            }
-        }
+node {
+    def app
+
+    stage('BUILD_STAGE') {
+        app = docker.build("ahujanikhil30/frontend")
     }
 }
