@@ -2,6 +2,10 @@ node {
     def app
 
     stage('BUILD_STAGE') {
-        sh 'docker-compose build'
+        dir ('./todo-list') {
+        
+            app= docker.buiild("ahujanikhil30/frontend")
+        }
     }
+
 }
