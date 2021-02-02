@@ -2,6 +2,6 @@ node {
     def app
 
     stage('BUILD_STAGE') {
-        app = docker.build("ahujanikhil30/frontend")
+        sh 'cd todo-list && docker build . -t ahujanikhil30/frontend'
     }
 }
