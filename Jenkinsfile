@@ -1,5 +1,5 @@
 node {
     checkout scm
-    //def app = docker.buiild("ahujanikhil30/frontend","./todo-list")
+    def app = docker.build("ahujanikhil30/frontend","./todo-list")
 
 }
