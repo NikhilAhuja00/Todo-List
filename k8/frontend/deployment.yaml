@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: frontend
+  labels:
+    app: react
+spec:
+  selector:
+    matchLabels:
+      app: react
+      tier: frontend  
+  template:
+    metadata:
+      labels:
+        app: react
+        tier: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: ahujanikhil30/frontend:latest
+        stdin: true
+        tty: true
+        ports:
+        - containerPort: 3000

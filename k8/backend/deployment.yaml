@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: backend
+  labels:
+    app: django
+spec:
+  selector:
+    matchLabels:
+      app: django
+      tier: backend
+  replicas: 1    
+  template:
+    metadata:
+      labels:
+        app: django
+        tier: backend
+    spec:
+     # volumes:
+     # - name: pv-storage
+     #   persistentVolumeClaim:
+     #     claimName: pv-claim
+      containers:
+      - name: backend
+        image: ahujanikhil30/backend
+        ports:
+        - containerPort: 8000
+     #   volumeMounts:
+     #     - mountPath: "/var/data"
+     #       name: pv-storage
+               
